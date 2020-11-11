@@ -82,7 +82,11 @@ class Crawler
 			{
 				if ( Object.keys(this.httpHeaders).indexOf(header.toLowerCase()) >= 0 )
 				{
-					userAgent += this.httpHeaders[header] + ' ';
+					userAgent += this.httpHeaders[header.toLowerCase()] + ' ';
+				}
+				if ( Object.keys(this.httpHeaders).indexOf(header.toUpperCase()) >= 0 )
+				{
+					userAgent += this.httpHeaders[header.toUpperCase()] + ' ';
 				}
 			}
 		}
